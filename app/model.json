@@ -125,6 +125,40 @@
           ]
         },
         {
+          "id": "ActivityForm",
+          "title": "Activity",
+          "url": "/activity",
+          "formFieldList": [
+            {
+              "id": "name",
+              "type": "text",
+              "name": "ActivityName",
+              "width": 2,
+              "required": true
+            },
+            {
+              "id": "location",
+              "type": "autocomplete",
+              "name": "Location",
+              "url": "/location",
+              "form": "LocationForm",
+              "width": 2
+            },
+            {
+              "type": "deleteButton",
+              "name": "Delete"
+            },
+            {
+              "type": "cancelButton",
+              "name": "Cancel"
+            },
+            {
+              "type": "okButton",
+              "name": "Ok"
+            }
+          ]
+        },
+        {
           "id": "AddActivityForm",
           "title": "Activity",
           "url": "/friend/:friendKey/activity",
@@ -179,6 +213,13 @@
               "icon": "fa-weixin",
               "color": "wisteria",
               "page": "groupspage"
+            },
+            {
+              "type": "button",
+              "name": "Activities",
+              "icon": "fa-bolt",
+              "color": "red",
+              "page": "activitiespage"
             }
           ]
         },
@@ -248,6 +289,60 @@
               "url": "/friend/:friendKey/activity",
               "form": {
                 "form": "ActivityForm"
+              }
+            }
+          ]
+        },
+        {
+          "id": "activitiespage",
+          "elementList": [
+            {
+              "type": "backbutton"
+            },
+            {
+              "type": "newButton",
+              "name": "NewActivity",
+              "icon": "fa-bolt",
+              "color": "green",
+              "form": {
+                "form": "ActivityForm"
+              }
+            },
+            {
+              "type": "list",
+              "icon": "fa-bolt",
+              "color": "red",
+              "search": true,
+              "url": "/activity",
+              "form": {
+                "form": "ActivityForm"
+              }
+            }
+          ]
+        },
+        {
+          "id": "activityfriendpage",
+          "elementList": [
+            {
+              "type": "backbutton"
+            },
+            {
+              "type": "button",
+              "name": "Activity",
+              "icon": "fa-bolt",
+              "color": "red",
+              "form": {
+                "form": "ActivityForm"
+              }
+            },
+            {
+              "type": "list",
+              "icon": "fa-user",
+              "color": "blue",
+              "search": true,
+              "url": "/activity/:activityKey/friend",
+              "form": {
+                "form": "FriendForm"
               }
             }
           ]
